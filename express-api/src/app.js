@@ -20,6 +20,25 @@ const projects = [
   { project: "Retractable-Accordion" },
 ];
 
+// const projects = [
+//   {
+//     author: "Challenges_jschallenger.com",
+//     content: "Using-Studio-Ghilis-API-With-JS-Only",
+//   },
+//   {
+//     author: "Challenges_jschallenger.com",
+//     content: "Using-Studio-Ghilis-API-With-JS-Only",
+//   },
+//   {
+//     author: "Challenges_jschallenger.com",
+//     content: "Using-Studio-Ghilis-API-With-JS-Only",
+//   },
+//   {
+//     author: "Challenges_jschallenger.com",
+//     content: "Using-Studio-Ghilis-API-With-JS-Only",
+//   },
+// ];
+
 app.get("/", function (req, res) {
   res.send(projects);
 });
