@@ -1,11 +1,28 @@
 import type { NextPage } from "next";
+import { InferGetStaticPropsType } from "next";
 
-import Blog from "./blog";
+type Post = {
+  project: string;
+};
 
-const Home: NextPage = () => {
+export const getStaticProps = async () => {
+  const res = await fetch("http://localhost:3100/");
+  const posts: Post[] = await res.json();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};
+
+const Home: NextPage = ({
+  posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <Blog />
+      <h3>Hi</h3>
+      {console.log(posts)}
     </>
   );
 };
